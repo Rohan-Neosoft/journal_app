@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:journal_app_using_bloc/Home/ui/home_main.dart';
 import 'package:journal_app_using_bloc/main.dart';
@@ -26,9 +28,10 @@ class _SplashPageState extends State<SplashPage> {
     );
   }
 
-  void navigateToMain() async {
-    await Future.delayed(Duration(seconds: 2));
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (_) => HomeMain()));
+  void navigateToMain() {
+    Timer(Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (_) => HomeMain()));
+    });
   }
 }
